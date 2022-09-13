@@ -1,5 +1,5 @@
 # convex-hull
-find the convex hull of a group of points based on line segment angles
+finds the convex hull of a group of points based on line segment angles
 
 ![image](https://user-images.githubusercontent.com/111729660/189994494-dc153d38-e44f-4b6a-89eb-41a41dfcfc85.png)
 
