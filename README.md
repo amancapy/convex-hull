@@ -6,5 +6,7 @@ finds the convex hull of a group of points based on line segment angles
 
 maybe my test cases were too small but the runtime graph (average of 100 tests for every n=size of the point list) seems to be decent for up to n=5000 (or i'm missing something very obvious here). note that the x axis isn't the sizes of n.
 
+edit: the obvious part here was that my sample groups were always square-ish so the hull ended up usually no longer than 10 points long. when i changed the sample type to circle-ish (worst case), runtime ramped up a little. regardless, most groups would be somewhere in between low-poly-ish and circle-ish, so i'm going to call it a day.
+
 ![image](https://user-images.githubusercontent.com/111729660/189990671-e08125c1-5cd8-4d3b-b2f3-a27ad1a2c651.png)
 ![image](https://user-images.githubusercontent.com/111729660/189990683-e4a137c4-9395-4619-b9cb-0e85d421d975.png)
