@@ -27,7 +27,7 @@ for n in range(testn):
     def bPoint(pntlist):
         minp = pntlist[0]
         for p in pntlist:
-            if p[1] > minp[1]:
+            if p[1] < minp[1]:
                 minp = p
 
         return minp
