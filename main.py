@@ -24,7 +24,7 @@ while len(plist) < npoints:
     x = random.randint(int(-adjwpad), int(adjwpad))
     y = random.randint(int(-adjwpad), int(adjwpad))
     if pDist((x, y), (0, 0)) <= adjwpad:
-        plist += [(x, y)]
+        plist.append((x, y))
 
 pygame.init()
 screen = pygame.display.set_mode((w, w))
@@ -84,7 +84,7 @@ ms = []
 for p in plist:
     if p != startP and p[0] > startP[0]:
         mdev = abs(0 - slope(p, startP))
-        ms += [[mdev, p]]
+        ms.append([mdev, p])
 if ms:
     nextP = min(ms, key=lambda a: a[0])[1]
 # if the lowest point happens to be the right-most point, it goes the other way and finds the
@@ -93,7 +93,7 @@ else:
     for p in plist:
         if p != startP and p[0] < startP[0]:
             m = -abs(0 - slope(p, startP))
-            ms += [[m, p]]
+            ms.append([m, p])
     nextP = max(ms, key=lambda a: a[0])[1]
     # exchange the order of the line segment since ultimately the checking is anti-clockwise
     # so it must go left->right
@@ -107,13 +107,13 @@ while not reached:
     for p3 in plist:
         if p3 != p1 and p3 != p2:
             # stores the angle every point in the group makes with the latest line segment
-            angles += [[threeAngle(p1, p2, p3), p3]]
+            angles.append([threeAngle(p1, p2, p3), p3])
     foundP = max(angles, key=lambda angs: angs[0])[1]  # the point that makes the largest such angle
     # if the p3 found is already in the hull, consider hull finished
     if foundP in hull:
         reached = True
         break
-    hull += [foundP]
+    hull.append(foundP)
 print(hull)
 
 # if npoints <= 25:
